@@ -147,6 +147,7 @@
 .added-to-cart img {
   height: 20px;
   margin-right: 5px;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .add-to-cart-button {
@@ -154,3 +155,7 @@
   padding: 8px;
   border-radius: 50px;
 }
+.added-to-cart.visible {
+  opacity: 1;
+}
+
