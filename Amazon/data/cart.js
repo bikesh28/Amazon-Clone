@@ -1,4 +1,4 @@
 window.cart = [];
 
- console.log("cart is initialized");
+ //console.log("cart is initialized");
 
