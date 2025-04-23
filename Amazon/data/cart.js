@@ -1,4 +1,4 @@
-window.cart = [];
+export const cart = [];
 
- //console.log("cart is initialized");
+
 
