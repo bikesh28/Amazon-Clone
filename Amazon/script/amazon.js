@@ -89,7 +89,7 @@ document.querySelectorAll('.js-add-to-cart')
             const productId = button.dataset.productId;
             addToCart(productId);
 
-            updateCart();
+            updateCart(); 
            
             addedToCartMessage(productId);
             
