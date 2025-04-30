@@ -14,10 +14,14 @@ if(!cart){
     ];
 }
 
+//storing cart to local storage
+
 function saveToStorage(){
     localStorage.setItem('cart',JSON.stringify(cart));
 }
 
+
+//function to add product to cart
 export function addToCart(productId){
     let matchingItem;
             
@@ -42,6 +46,8 @@ export function addToCart(productId){
 
 }
 
+
+//function to delete product from cart
 export function removeFromCart(productId){
     const newCart =[];
 
@@ -53,6 +59,8 @@ export function removeFromCart(productId){
     cart = newCart;
     saveToStorage();
 }
+
+//updating cart quantity after adding or deleting 
 export function updateCartQuantity(){
     let cartQunatity = 0;
     cart.forEach((cartItem)=>{

@@ -5,9 +5,10 @@ import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import { deliveryOptions } from '../data/deliveryoptions.js';
 
 const today = dayjs();
-const deliveyDate = today.add(7, 'days');
-console.log((deliveyDate.format('dddd, MMMM D')));
-
+const deliveyDateSeven = today.add(7, 'days');
+console.log((deliveyDateSeven.format('dddd, MMMM D')));
+const deliveyDateThree = today.add(3, 'days');
+console.log(deliveyDateThree);
 
 
 let cartSummaryHTML='';
