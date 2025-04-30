@@ -82,7 +82,40 @@ cartSummaryHTML +=`
 `;
 });
 
+function deliveryOptionHTML(matchingProduct, cartItem){
+    let html ='';
 
+
+    deliveryOptions.forEach((deliveryOption) =>{
+        const today = dayjs();
+        const deliveryDate = today.add(
+            deliveryOption.deliveryDays,'days'
+        );
+        const dateString = deliveryDate.format('dddd, MMMM D');
+
+        const priceString = (deliveryOption.priceCents) === 0 ? 'FREE' : `$${formatCurrency(deliveryOption.priceCents)} -`
+        const isChecked = deliveryOption.id === cartItem.deliveryOption.id;
+        html +=
+        `
+            <div class="delivery-option">
+                <input type="radio"
+                  ${isChecked ? 'checked' : ''}
+                 class="delivery-option-input"
+                 name="delivery-option-${matchingProduct.id}">
+                    <div>
+                        <div class="delivery-option-date">
+                            ${dateString}
+                        </div>
+                        <div class="delivery-option-price">
+                        ${priceString} Shipping
+                        </div>
+                    </div>
+            </div>
+        ` 
+
+    })
+    return html;
+}
 
 let checkoutQuantity = document.querySelector('.js-return-to-home-link');
 checkoutQuantity.innerHTML = updateCartQuantity();    
