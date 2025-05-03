@@ -1,3 +1,5 @@
+//need debugging 
+
 import {cart, removeFromCart, updateCartQuantity, updateDeliveryOption} from '../../data/cart.js';
 import { products , getProduct } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
