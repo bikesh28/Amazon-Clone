@@ -90,7 +90,7 @@ function Cart(localStorageKey){
 }
 
 const cart = Cart('cart-oop');
-const businessCart = cart('cart-business');
+const businessCart = Cart('cart-business');
 
 
 
