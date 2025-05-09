@@ -12,6 +12,21 @@ async function loadPage() {
     
 }
 
+Promise.all([
+    loadProductsFetch()       //--> returns a promise
+    ,
+    new Promise((resolve) =>{
+        loadCart(() => {
+            resolve();
+
+        });
+    })
+]).then(() => {
+    renderOrderSummary();
+    renderPaymentSummary(); 
+});
+
+loadProductsFetch();
 
 
 /*
