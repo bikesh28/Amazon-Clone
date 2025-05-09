@@ -7,21 +7,11 @@ import { loadCart } from "../data/cart.js";
 // import '../data/cart-oop.js';
 
 
-Promise.all([
-    loadProductsFetch()       //--> returns a promise
-    ,
-    new Promise((resolve) =>{
-        loadCart(() => {
-            resolve();
+async function loadPage() {
+    console.log('load page');
+    
+}
 
-        });
-    })
-]).then(() => {
-    renderOrderSummary();
-    renderPaymentSummary(); 
-});
-
-loadProductsFetch();
 
 
 /*
